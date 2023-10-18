@@ -1,0 +1,54 @@
+body{
+    background-color: #efef08;
+    font-family: cursive;
+}
+h1{
+    text-align: center;
+    background-color: burlywood;
+    padding: 2%;
+    border: solid black;
+    
+}
+h2{
+    border-bottom:solid black;
+}
+/* Style for the burgers fieldset */
+#burgers {
+    background-color: rgb(181, 173, 9);
+    border: 2px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the sauces fieldset */
+#sauces {
+    background-color: crimson;
+    border: 2px solid #555;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the toppings fieldset */
+#toppings {
+    background-color: aqua;
+    border: 2px solid #777;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the total fieldset */
+#total {
+    background-color: rgb(76, 240, 76);
+    border: 2px solid #999;
+    padding: 10px;
+}
+
+#row1{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+
+

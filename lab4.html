@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="lab4css.css">
+    <title>LAb #4</title>
+</head>
+<body>
+    
+    <h1>hello and welcome to the store :}</h1>
+    <section id="java">
+        <script language="JavaScript">
+            var burger = "none";
+            var sauce = "none";
+            var toppings = "none";
+            var price = 0.00;
+            var total_price;
+            var tax = 0.88;
+
+            function calculateTotal() {
+                if (burger === "cheese") {
+                    price = 2;
+                }
+                if (burger === "chicken" || burger === "burger") {
+                    price = 3;
+                }
+                if (burger === "bison") {
+                    price = 6;
+                }
+                if (sauce === "ketchup" || sauce === "mayo") {
+                    price = price + 0.50;
+                }
+                if (sauce === "mustard") {
+                    price = price + 0.70;
+                }
+                if (toppings === "shredded_cheese" || toppings === "pickles") {
+                    price = price + 0.30;
+                }
+                
+                total_price = price + tax;
+                document.burgers.price.value = total_price.toFixed(2);
+            }
+
+            function clearOrder() {
+                burger = "none";
+                sauce = "none";
+                toppings = "none";
+                total_price = 0.00;
+                document.burgers.price.value = total_price.toFixed(2);
+            }
+        </script>
+    </section>
+    
+    
+    <h2><br>choose from our menu</h2>
+    <form name="burgers">
+        <section name="burger">
+            <fieldset id="burgers">
+                <legend><h4>please choose your burger:</h4></legend>
+                <div id="row1">
+                    <div>
+                        <img src="cheeseburger.jpg" alt="cheese">
+                        <input type="button" name="burgers" value="cheese" onclick='burger="cheese";'>
+                    </div>
+                    <div>
+                        <img src="steak.jpg" alt="steak">
+                        <input type="button" name="burgers" value="steak" onclick='burger="steak";'>
+                    </div>
+                    <div>   
+                        <img src="cheeseburger.jpg" alt="chicken">
+                        <input type="button" name="burgers" value="chicken" onclick='burger="chicken";'>
+                    </div>
+                    <div>
+                        <img src="bison.jpg" alt="bison">
+                        <input type="button" name="burgers" value="bison" onclick='burger="bison";'>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="sauces">
+                <legend><h4>please choose your sauces:</h4></legend>
+                <div id="row2">
+                    <div>
+                        <input type="button" name="burgers" value="ketchup" onclick='sauce="ketchup";'>
+                    </div>
+                    <div>
+                        <input type="button" name="burgers" value="mayo" onclick='sauce="mayo";'>
+                    </div>
+                    <div> 
+                        <input type="button" name="burgers" value="mustard" onclick='sauce="mustard";'>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="toppings">
+                <legend><h4>please choose your toppings:</h4></legend>
+                <div id="row3">
+                    <div>
+                        <input type="button" name="burgers" value="pickles" onclick='toppings="pickles";'>
+                    </div>
+                    <div>
+                        <input type="button" name="burgers" value="shredded_cheese" onclick='toppings="shredded_cheese";'>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="total">
+                <legend><h4>now this is your total:</h4></legend>
+                <div id="row4">
+                    <div>
+                        <input type="button" value="Total" onclick='calculateTotal();'>
+                    </div>
+                    <div> 
+                        <input type="text" name="price" value="0.00" size="3" onchange='document.burgers.price.value = total_price.toFixed(2);'>
+                    </div>
+                    <div>
+                        <input type="button" value="clear" onclick='clearOrder();'>
+                    </div>
+                </div>
+            </fieldset>
+        </section>
+    </form>
+</body>
+</html>
